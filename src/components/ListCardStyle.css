@@ -1,0 +1,184 @@
+.list-card{
+    height: 225px;
+    border-radius:5px;
+    padding:.3em;
+    display:grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows:repeat (10, 1fr);
+  
+    font-family:'Roboto', sans-serif;
+    
+}
+.red{
+    background-color:var(--text-color-red);
+    color:var(--error-color-red);
+}
+.yellow{
+    background-color: var(--text-color-yellow);
+    color: var(--error-color-yellow);
+}
+.green{
+    background-color: var(--text-color-green);
+    color: var(--error-color-green);
+}
+.red-button{
+    color:var(--text-color-red);
+    background-color:var(--error-color-red);
+}
+.yellow-button{
+    color: var(--text-color-yellow);
+    background-color: var(--error-color-yellow);
+
+}
+.green-button{
+    color: var(--text-color-green);
+    background-color: var(--error-color-green);
+}
+
+.list-card > h3{
+    grid-column:1/11;
+    grid-row:1/1;
+    text-align:left;
+    font-size:15px;
+    align-self:center;
+    margin-left: .3rem;
+    
+}
+.list-card >div {
+    grid-column:1/11;
+}
+.list-card p{
+    text-align:left;
+    font-size:14px;
+    padding: .3rem;
+}
+.list-card > button {
+    border:none;
+    border-radius:5px;
+}
+.list-card > .edit-button{
+    grid-column:1/13;
+    grid-row:6/6;
+    cursor:pointer;
+    height:30px;
+    /* width:30px; */
+    align-self:end;
+}
+/* .edit-button > .edit-logo{
+    height:20px;
+    width:20px;
+    margin-top:2px;
+    
+} */
+.list-card >.delete-button{
+    grid-column:12/12;
+    align-self:start;
+    justify-self:end;
+    height:25px;
+    width:25px;
+    /* grid-column:10/11; */
+    cursor:pointer;
+   
+}
+.list-card span{
+	font-weight: 500;
+}
+
+
+/*================== Här börjar edit-card================== */
+.edit-list-card{
+    height: 225px;
+    min-width:200px;
+    border-radius:5px;
+    padding:.3em;
+    font-size:14px;
+    display:grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows:repeat (10, 1fr);
+   
+}
+.edit-list-card > :nth-child(2){
+    
+    grid-row:1/1;
+}
+.edit-list-card div{
+    min-width:5rem;
+    display:flex;
+    align-items: flex-end;
+    grid-column:1/11;
+
+}
+.edit-list-card label {
+    font-size:14px;
+    margin-top:0rem;
+    margin-right: .5rem;
+    font-weight:bold;
+    /* margin:.1rem; */
+}
+.edit-list-card  input[type='text'], input[type='number'] {
+    border-radius:5px;
+    font-size:14px;
+    border:none;
+    width:100%;
+    margin-left: .5rem;
+    margin:.1rem;
+ 
+}
+.edit-list-card p{
+    font-weight:bold;
+    margin-right:.7rem;
+   
+}
+.edit-radio-container label{
+    margin-right: 0.2em;
+    font-weight:lighter; 
+    
+    
+}
+.edit-radio-container > input[type='radio']{
+    height: .9rem;
+    margin-right:.7rem;
+    position: relative;
+    top: -.05rem;
+    
+}
+
+.edit-list-card .comment-container{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: .3rem;
+
+}
+.comment-container > textarea{
+    resize:none;
+    width: 100%;
+    height:3rem;
+    grid-column:1/13;
+    border: none;
+    border-radius: 5px;
+}
+.edit-list-card  .comment-label{
+    display:block;
+}
+.edit-list-card input[type='number']{
+    max-width:3rem;
+    top:0;
+}
+
+.save-edit-button{
+    grid-column: 1/13;
+    border-radius: 5px;
+    height: 30px;
+    align-self: end;
+}
+.edit-list-card > .delete-button{
+    border:none;
+    border-radius:5px;
+    grid-column:12/12;
+    align-self:start;
+    justify-self:end;
+    height:25px;
+    width:25px;
+
+}

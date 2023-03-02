@@ -1,38 +1,93 @@
+/* Global css */
 .App {
-  text-align: center;
+	height: 100vh;
+	width:100vw;
+	overflow:hidden;
+}
+.logoBig {
+	width:30em;
+	height:10em;
+	margin: 3em;
+}
+.start-card-wrapper{
+	width: 20em;
+	display: flex;
+	height: 125vh;
+	flex-direction: column;
+	margin: 0 auto;
+	padding-top:25em;
+}
+.card{
+	height:95%;
+	margin-top: -18em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.start-card-wrapper input[type="radio"]:checked + label {
+	flex: 1 1 auto;
+	margin-bottom: -3em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.start-card-wrapper  label {
+	flex: 0 0 auto;
+	transition: all 1s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* DISPLAY NONE I DESKTOP VY på ALLT utom korten */
+.start-card-wrapper > input	{
+	display: none;
 }
-
-.App-link {
-  color: #61dafb;
+@media only screen and (max-height: 580px){
+	.start-card-wrapper{
+		height:150vh;
+		width:18em;
+		padding-top:23em;
+	}
+	.start-card-wrapper input[type="radio"]:checked + label {
+		margin-bottom: -2em;
+	}
+	.card{
+		margin-top: -16.3em;
+		height:auto;
+	}
 }
+@media only screen and (max-height: 700px){
+	.start-card-wrapper{
+		height:140vh
+	}
+}
+@media only screen and (min-width: 700px){
+	.start-card-wrapper{
+		position: relative;
+		display:grid;
+		width:80%;
+		grid-template-columns: repeat(3,1fr);
+		margin:0 auto;
+		padding-top: 1rem;
+	}
+	.first-card{
+		grid-column-start: 1;
+		grid-column-end: 1;
+		z-index: 10;
+		margin-top: 0;
+	}
+	.second-card{
+		grid-column-start: 2;
+		grid-column-end: 2;
+		z-index: 5;
+		margin-top: 0;
+	}
+	.third-card{
+		grid-column-start: 3;
+		grid-column-end: 3;
+		z-index: 1;
+		margin-top: 0;
+	
+	}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+@media only screen and (min-width: 1200px){
+	.start-card-wrapper{
+		width:60%;
+		padding-left: 3em;
+	}
 }

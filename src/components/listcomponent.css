@@ -1,0 +1,318 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+ main {
+    border-radius: 9px;
+    height: 88vh;
+    display: grid;
+    grid-template-rows: 3em 5em 1fr 5em;
+}
+
+main > .add-button {
+    text-align: center;
+    
+ }
+
+.add-button > button {
+    padding: 0.8em;
+    border-radius: 5px;
+    border: none;
+    width: 10rem;
+    font-weight: bolder;
+    font-size: 1rem;
+   
+}
+.sortChosed-red {
+    background-color:  var(--text-color-red);
+    color: var(--error-color-red);
+    font-weight: bolder;
+    
+}
+.sortChosed-yellow {
+    background-color:  var(--text-color-yellow);
+    color: var(--error-color-yellow);
+    font-weight: bolder;
+    
+}
+.sortChosed-green {
+    background-color:  var(--text-color-green);
+    color: var(--error-color-green);
+    font-weight: bolder;
+    
+}
+.addButton-red {
+    background-color:  var(--text-color-red);
+    color: var(--error-color-red); 
+}
+.addButton-yellow {
+    background-color:  var(--text-color-yellow);
+    color: var(--error-color-yellow); 
+}
+.addButton-green {
+    background-color:  var(--text-color-green);
+    color: var(--error-color-green); 
+}
+  
+.sortItem-red:hover {
+    background-color:  var(--text-color-red);
+    color: var(--background-color-red);
+}
+.sortItem-yellow:hover {
+    background-color:  var(--text-color-yellow);
+    color: var(--background-color-yellow);
+}
+.sortItem-green:hover {
+    background-color:  var(--text-color-green);
+    color: var(--background-color-green);
+}
+
+
+.listcomponent-menu input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    border-radius: 0%;
+    padding: 0.3em;
+    border-bottom: 1px solid var(--text-color-red);
+    font-size: 1rem;
+}
+.listcomponent-menu input:focus {
+    outline: none;
+}
+::placeholder {
+    /* color: var(--text-color-red); */
+    opacity: 1;
+    font-size: 1.2em;
+    
+}  
+
+.listcomponent-menu {
+    display: grid;
+    grid-template-columns: 7em 1fr;
+    text-align: left;
+    
+   
+    
+}
+.listcomponent-menu > div {
+    margin: 0.5em;
+    margin-top: 1em;
+   
+    
+}
+
+.sort {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+   
+}
+.drop-div {
+    border-bottom: 1px solid  var(--text-color-red);
+    font-size: 1.5em;
+    padding-left: 0.2em;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: relative;
+}
+.dropdown-content > div:last-child {
+    border-radius: 0 0 10px 10px;
+}
+.sort:hover .dropdown-content {
+	display: block;
+	border-radius: 10px 10px 10px 10px;
+    
+}
+.dropdown-content{
+    width:100%;
+}
+.dropdown-content div {
+    padding: 1em;
+    padding-left: 1em;
+}
+.desktop-menu {
+    display: none;
+}
+
+
+/* mobile *//* mobile *//* mobile *//* mobile *//* mobile */
+@media screen and (max-width:700px) {
+    
+     .scrollable {
+      overflow-y: auto;  
+    } 
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .main > div {
+        margin-bottom: 1em;
+    }
+    main > h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: lighter;
+    }
+    .main {
+        height: 95%;
+    }
+    
+    .listcomponent-menu {
+        grid-template-columns: 8em 1fr;  
+    }
+    .drop-div {
+        padding-left: 0.5em;
+        
+    }
+    .listcomponent-menu input.red{
+        color: var(--text-color-red);
+        border-bottom: 1px solid var(--text-color-red);
+    }
+    .listcomponent-menu input.yellow{
+        color: var(--text-color-yellow);
+        border-bottom: 1px solid var(--text-color-yellow);
+    }
+    .listcomponent-menu input.green{
+        color: var(--text-color-green);
+        border-bottom: 1px solid var(--text-color-green);
+    }
+    ::placeholder {
+        color: inherit;
+        opacity: 1;
+        font-size: 1.2em;
+        
+    }  
+}
+
+/* Desktop *//* Desktop *//* Desktop *//* Desktop *//* Desktop */
+@media screen and (min-width: 701px){
+    .scrollable {
+        
+        overflow-y: auto;
+        
+    } 
+    .main {
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap:1em;
+        height: 90%; 
+        
+        
+    }
+   
+   
+/* DETTA PILLAR VI MED*/
+
+    
+    /* .listcomponent-menu .sort {
+        width: (30vw - 21rem - 15rem);
+        max-width: calc(25rem - 15rem);
+    } */
+    .listcomponent-menu input.red{
+        color: var(--error-color-red);
+        border-bottom: 1px solid var(--error-color-red);
+    }
+    .listcomponent-menu input.yellow{
+        color: var(--error-color-yellow);
+        border-bottom: 1px solid var(--error-color-yellow);
+    }
+    .listcomponent-menu input.green{
+        color: var(--error-color-green);
+        border-bottom: 1px solid var(--error-color-green);
+    }
+
+    .listcomponent-menu input:focus {
+        outline: none;
+    }
+    ::placeholder {
+        color: inherit;        
+    }  
+    
+    .listcomponent-menu {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: calc(75vw - 21rem);
+        max-width: 39rem;
+        /* padding-right: 2rem; */
+        position: absolute;
+        right: 0;
+        top: -4rem;
+        
+    }
+    
+    .listcomponent-menu input {
+        background: transparent;
+        padding: 0.2em;
+        border-radius: 0%;
+        padding: 0.55em;   
+        width: calc(80vw - 21rem - 10rem);
+		max-width: calc(39rem - 20rem);
+		margin-top: 0.81em;
+		margin-right: 0.8em;
+    }
+    
+    .sort {
+        position: relative;
+        display: inline-block;
+        width: 8rem;
+		border-radius: 10px;
+
+		
+        
+    }
+    .sort:hover{
+        border: 1px solid white;
+
+        border-radius: 10px 10px 10px 10px;
+    }
+      
+	.drop-div {
+		padding: 0.8em;
+		border-radius: 5px;
+		border: none;
+		width: 10rem;
+		font-weight: bolder;
+		font-size: 1.2rem;
+    }
+
+     main {
+        display: grid;
+        grid-template-rows: 4em 1fr 3em  ;
+        height: 100%;
+         
+    }
+    
+     main > h2 {
+        text-align: left;
+        margin-top: 0.5em;
+        font-size: 2rem;
+        font-weight: lighter;
+        
+    }
+    main > .add-button {
+       text-align: right;
+       
+    }
+   
+    .listcomponent-menu > div{
+        /* border: 1px solid black; */
+        margin: 0px;
+    }     
+}
+@media screen and (max-width: 1130px){
+    .main{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap:1em;
+        
+    }
+   
+}

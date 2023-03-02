@@ -1,0 +1,230 @@
+
+form{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  
+form h2{
+  font-size: 1.875rem;
+  font-weight: lighter;
+}
+form label{
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-bottom: .3rem;
+  align-self: flex-start;
+}
+form input{
+  width: 70vw;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: .7rem;
+  font-weight: lighter;
+  border: none;
+  background-color: var(--text-color-red);
+}
+form > .rating-container {
+  width: 100%;
+}
+form > .rating-container > div:first-child{
+  width: 100%;
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+.error-rating{
+  text-align: end;
+}
+
+form input[type="radio"]{
+  width: 1.6em;
+  height: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  top: .3rem;
+}
+form input[type="radio"]:nth-of-type(2){
+    margin-right: 0;
+}
+
+form input[type="number"]{
+  width: 8rem;
+  position: relative;
+}
+
+
+fieldset{
+  border: none;
+  padding: 0;
+}
+
+legend{
+  font-size: 1.125rem;
+  display: inline;
+}
+div.rate-div{
+  width: min-content;
+}
+  
+form textarea{
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+}
+
+form > input[type="submit"]{
+  font-size: 1.3rem;
+  width: 100%;
+  border: none;
+  margin-top: 1.5rem;
+  padding: .5em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.form-textarea-container{
+  width: 100%;
+  text-align: right;
+}
+  .form-input-container{
+    position: relative;
+  }
+  .form-input-container span{
+    position: absolute;
+    right: 0;
+    bottom: -1.3rem;
+	}
+  /* For those crazy ass small screens */
+
+  @media(max-width: 337px){
+
+    input[type="radio"]:nth-of-type(1){
+        margin-right: 0;
+    }
+    form .rating-container{
+     
+      justify-content: space-between;
+    }
+    form textarea{
+      max-height: 4rem;
+    
+	}
+	form input[type="number"]{
+		width: 6rem;
+	}
+  
+  }
+
+  /* For them fat screens */
+
+
+@media(min-width: 700px){
+
+    form h2{
+        align-self: center;
+        font-size: 2rem; 
+        padding-top: 1rem;
+
+    }
+
+    form{
+      align-items: flex-start;
+	}
+    form input{
+        width: 60%;
+        max-width: 31rem;
+    }
+
+  form > .rating-container{
+    width: 100%;
+    /* max-width: 20rem; */
+    min-width: fit-content;
+    
+    display: flex;
+  }
+  form > .rating-container > div:first-child{
+    width: 60%;
+    max-width: 31rem;
+    display:flex;
+    margin-top:1rem;
+    justify-content: space-between;
+  }
+
+  form input[type="radio"]{
+    width: 1.6em;
+    height: 1.5rem;
+    margin-right: .2em;
+    position: relative;
+    top: .3rem;
+  }
+
+  .form-input-container{
+	  width: 100%;
+  }
+  .form-input-container span{
+    padding-left: 0.6em;
+    position: unset;
+	}
+	.error-rating{
+    display:flex;
+    align-items: center;
+    margin-top: 1.8rem;
+    padding-left:0.6em;
+    padding-top: 0.6em;
+  }
+  div.rate-div{
+    width:unset;
+  }
+  label.rate{
+    display: block;
+    margin-top: unset;
+  }
+	.form-textarea-container{
+		width: 100%;
+    display: flex;
+    text-align: unset;
+	}
+	.form-textarea-container span{
+		padding-left: 0.6em;
+    align-self: start;
+    position: unset;
+	}
+	
+  form textarea{
+      width: 60%;
+      max-width: 31rem;
+      height: 7rem;
+  }
+  form > input[type="submit"]{
+    bottom: 2rem;
+    right: 2rem;
+    position: absolute;
+    padding: 0.8em;
+    border-radius: 5px;
+    border: none;
+    width: 10rem;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+}
+
+@media(max-height: 800px) and (min-width: 700px){
+  form > div{
+    padding: 0;
+  }
+  form textarea{
+    max-height: 8rem;
+  }
+  form label{
+    padding-bottom: unset;
+    margin-top: .2rem;
+  }
+}

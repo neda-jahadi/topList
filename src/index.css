@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --text-color-red: #F8EBEB;
+  --text-color-yellow: #FFF8E0;
+  --text-color-green: #F1FFE0;
+  --background-color-red: #EB9191;
+  --background-color-yellow: #EBD791;
+  --background-color-green: #B1D188;
+  --error-color-red: #AA3737;
+  --error-color-yellow: #9A7B0E;
+  --error-color-green: #49701A;
+  
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap%27');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* COMMON STYLING */
+p, h1, h2, h3{
+	/* font-family: 'Roboto', sans-serif; */
+}
+.text-red{
+  color: var(--text-color-red);
+}
+.text-yellow{
+  color: var(--text-color-yellow);
+}
+.text-green{
+  color: var(--text-color-green);
+}
+.background-red{
+  background-color: var(--background-color-red);
+}
+.background-yellow{
+  background-color: var(--background-color-yellow);
+}
+.background-green{
+  background-color: var(--background-color-green);
+}
+.button-red{
+  background-color: var(--text-color-red);
+  color:var(--error-color-red);
+}
+.button-yellow{
+  background-color: var(--text-color-yellow);
+  color:var(--error-color-yellow);
+}
+.button-green{
+  background-color: var(--text-color-green);
+  color:var(--error-color-green);
+}
+.error-red{
+  color: var(--error-color-red);
+}
+.error-yellow{
+  color: var(--error-color-yellow);
+}
+.error-green{
+  color: var(--error-color-green);
+}
+.input-background-red{
+  background-color: var(--text-color-red);
+}
+.input-background-yellow{
+  background-color: var(--text-color-yellow);
+}.input-background-green{
+  background-color: var(--text-color-green);
+}
+/* END */
+
+button{
+  cursor: pointer;
 }
