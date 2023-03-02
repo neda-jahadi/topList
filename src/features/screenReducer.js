@@ -13,12 +13,11 @@ const screenActions = {
     homeScreen
 }
 
-const reducer = createReducer(currentScreen, {
-    [listScreen]: () => 'listScreen',
-    [formScreen]: () => 'formScreen',
-    [homeScreen]: () => 'welcomeScreen'
-
-       
+const reducer = createReducer(currentScreen, (builder) => {
+    builder
+    .addCase(listScreen, () => 'listScreen')
+    .addCase(formScreen, () => 'formScreen')
+    .addCase(homeScreen, () => 'welcomeScreen')
 })
 
 

@@ -48,7 +48,6 @@ const StartCard = ({genre}) => {
 	const handler = (title, category) =>{
 		if(title === 'Music'){
 			dispatch(categoryActions.choseMusic())
-			console.log('i if sats category', category)
 		}
 		else if(title === 'Books'){
 			dispatch(categoryActions.choseBooks())

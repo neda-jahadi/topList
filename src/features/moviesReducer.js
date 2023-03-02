@@ -16,17 +16,17 @@ const moviesList = [
 
 ];
 
-const reducer = createReducer(moviesList, {
-    [addToMoviesList]: (state, action) => [ action.payload, ...state],
-    [removeFromMoviesList]: (state, action) => state.filter(item => item.title !== action.payload),
-    [editMoviesList]: (state, action)=> state.map(item=>{
+const reducer = createReducer(moviesList, (builder) => {
+    builder
+    .addCase(removeFromMoviesList, (state, action) => state.filter(item => item.title !== action.payload))
+    .addCase(editMoviesList, (state, action) => state.map(item=>{
         if (item.title===action.payload.title && item.creator===action.payload.creator){
             return action.payload.editedObject
         }
         else{
             return item
         }
-    })
+    }))   
 })
 
 export { reducer, moviesListActions };

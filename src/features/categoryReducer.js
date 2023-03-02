@@ -15,11 +15,12 @@ const categoryActions = {
 }
 
 
-const reducer = createReducer(categoryDisplayed, {
-    [choseMusic]: ()=> 'music',
-    [choseBooks]: ()=> 'books',
-    [choseMovies]: ()=> 'movies',
-    [startPage]: ()=> 'start'
+const reducer = createReducer(categoryDisplayed, (builder) => {
+    builder
+    .addCase(choseMusic, () => 'music')
+    .addCase(choseBooks, () => 'books')
+    .addCase(choseMovies, () => 'movies')
+    .addCase(startPage, () => 'start')
 });
 
 export { reducer , categoryActions };

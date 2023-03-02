@@ -18,11 +18,11 @@ const booksList = [
     {title: 'Egalias Döttrar', creator: 'Bra fråga', rating:'', usedBefore:'no', comment: 'Nåt feministiskt'},
 ];
 
-const reducer = createReducer(booksList, {
-    [addToBooksList]: (state, action) => [ action.payload, ...state],
-    [removeFromBooksList]: (state, action) => state.filter( item => item.title !== action.payload),
-    [editBooksList]: (state, action) => 
-        state.map( item=> { 
+const reducer = createReducer(booksList, (builder) => {
+    builder
+    .addCase(removeFromBooksList, (state, action) => state.filter( item => item.title !== action.payload))
+    .addCase(editBooksList, (state, action) => {
+        return state.map( item=> { 
 
             if(item.title === action.payload.title && item.creator === action.payload.creator){
                 
@@ -32,6 +32,7 @@ const reducer = createReducer(booksList, {
                 return item
             }
         })
+    })
 })
 
 export { reducer, booksListActions };

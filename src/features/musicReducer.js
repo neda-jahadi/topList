@@ -17,18 +17,18 @@ const musicList = [
     {title: 'Jesus Antichristus', creator: ':Wumpscut', usedBefore:'yes', rating:'2', comment: 'Den var bättre förr.'},
 ];
 
-const reducer = createReducer(musicList, {
-    [addToMusicList]: (state, action) => [ action.payload, ...state],
-    [removeFromMusicList]: (state, action) => state.filter(item => item.title !== action.payload),
-    [editMusicList]:(state, action)=> state.map(item=>{
-
+const reducer = createReducer(musicList, (builder) => {
+    builder
+    .addCase(removeFromMusicList, (state, action) => state.filter(item => item.title !== action.payload))
+    .addCase(editMusicList, (state, action) => state.map(item=>{
         if (item.title===action.payload.title && item.creator===action.payload.creator){
             return action.payload.editedObject
         }
         else{
             return item
         }
-    })
+    }))   
 })
+
 
 export { reducer, musicListActions };
