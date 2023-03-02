@@ -21,6 +21,11 @@ function App() {
 						<ListComponent/>
 					</Container>
 			break;
+		case 'formScreen':
+			content = <Container>
+						<FormComponent/>
+					</Container>
+			break;
 		case 'welcomeScreen':
 			content = (
 				<>

@@ -11,7 +11,7 @@ import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
 import movieIcon from '../assets/video-camera.png';
 const FormComponent = ()=>{
-    const {register, handleSubmit, errors } = useForm();
+    const {register, handleSubmit, formState:{ errors } } = useForm();
     const [usedBefore, setUsedBefore] = useState(null);
 	const dispatch = useDispatch();
     const category = useSelector( state => state.category );
@@ -82,14 +82,14 @@ const FormComponent = ()=>{
                 <h2>{h2}</h2>
 				<label htmlFor="title">{titleText}</label>
 				<div className="form-input-container">
-					<input className={colorInputClass} id="title" type="text" ref={register({ required: true, minLength:2, maxLength:20 })} name="title"/>
+					<input className={colorInputClass} id="title" type="text" {...register('title', { required: true, minLength:2, maxLength:20 })} />
 					{errors.title && errors.title.type === 'required' && <span className={errorClass}>Title is required</span>}
 					{errors.title && errors.title.type === "minLength" && <span className={errorClass}>This field required min length of 2</span>}
 					{errors.title && errors.title.type === "maxLength" && <span className={errorClass}>This field required max length of 20</span>}
 				</div>		
 				<label htmlFor="creator">{creatorText}</label>
 				<div className="form-input-container">
-                    <input className={colorInputClass} id="creator" type="text"  ref={register({maxLength:20})} name="creator"/>
+                    <input className={colorInputClass} id="creator" type="text" {...register('creator', { maxLength:20 })} />
 					{errors.creator && errors.creator.type === "maxLength" && <span className={errorClass}>Max 20 characters</span>}
 				</div>
                 <div className="rating-container">
@@ -97,14 +97,14 @@ const FormComponent = ()=>{
                         <fieldset>
                             <legend>{usedBeforeText}</legend>
                                 <label htmlFor="yes">Yes</label>
-                                <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register({required: true})}/>
+                                <input className={colorInputClass} id="yes" type="radio"  value='yes' onClick={()=> setUsedBefore(true)} {...register('usedBefore', { required: true })} />
                                 <label htmlFor="no">No</label>
-                                <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register({required: true})}/>
+                                <input className={colorInputClass} id="no" type="radio"  value="no" onClick={()=> setUsedBefore(false)} {...register('usedBefore', { required: true })} />
                                 {errors.usedBefore && errors.usedBefore.type === 'required' && <p className={errorClass}>Select Yes or No</p>}
                         </fieldset>
                         <div className="rate-div">
                         <label className="rate" htmlFor="rating">Rating 1-5</label>
-                            <input className={colorInputClass} type="number" ref={register( {required:usedBefore, maxLength:1, min:1, max:5}) } name="rating"/>
+                            <input className={colorInputClass} type="number" {...register('reting', { required:usedBefore, maxLength:1, min:1, max:5 })} />
                         </div>                        
                     </div>
                     {errors.rating && errors.rating.type === 'required' && <div className={errorClass + " error-rating"}>Rating is required</div>}
@@ -114,7 +114,7 @@ const FormComponent = ()=>{
                 </div>
 				<label htmlFor="comment">Comment</label>
 				<div className="form-textarea-container">
-					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:60})} name="comment"/>
+					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" {...register('comment', { maxLength:60 })} />
 					{errors.comment && errors.comment.type === 'maxLength' && <span className={errorClass}>Max 60 characters</span>}
 				</div>
                 <input type="submit" value='Submit' className={buttonClass + " submit-button"}/>

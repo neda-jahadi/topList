@@ -20,6 +20,7 @@ const booksList = [
 
 const reducer = createReducer(booksList, (builder) => {
     builder
+    .addCase(addToBooksList, (state, action) => [ action.payload, ...state])
     .addCase(removeFromBooksList, (state, action) => state.filter( item => item.title !== action.payload))
     .addCase(editBooksList, (state, action) => {
         return state.map( item=> { 

@@ -165,7 +165,7 @@ const ListComponent = ({formScreen,startCard}) =>{
 
                  </div>
                 <div className='add-button'>
-                   {/* <button className={`addButton-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button> */}
+                   <button className={`addButton-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
 
                 </div>
             </main>

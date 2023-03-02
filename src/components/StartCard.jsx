@@ -48,6 +48,7 @@ const StartCard = ({genre}) => {
 	const handler = (title, category) =>{
 		if(title === 'Music'){
 			dispatch(categoryActions.choseMusic())
+			console.log('i if sats category', category)
 		}
 		else if(title === 'Books'){
 			dispatch(categoryActions.choseBooks())
@@ -92,6 +93,7 @@ const StartCard = ({genre}) => {
 				</div>
 				<div className="btn-container">
 					<button className={`btn-list button-${color}`} onClick={()=> handler(title, 'list')}>{title}</button>
+					<button className={`btn-add button-${color}`}  onClick={() => handler(title, 'form')}>Add {title}</button>
 				</div>
 			</div>
 		</div>

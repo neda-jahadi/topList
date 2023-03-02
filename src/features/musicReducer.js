@@ -19,6 +19,7 @@ const musicList = [
 
 const reducer = createReducer(musicList, (builder) => {
     builder
+    .addCase(addToMusicList, (state, action) => [ action.payload, ...state])
     .addCase(removeFromMusicList, (state, action) => state.filter(item => item.title !== action.payload))
     .addCase(editMusicList, (state, action) => state.map(item=>{
         if (item.title===action.payload.title && item.creator===action.payload.creator){
