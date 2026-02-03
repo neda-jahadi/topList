@@ -26,8 +26,6 @@ Built to practice modern React patterns, predictable state management with Redux
 - Global state management using Redux Toolkit (slices, reducers, actions)
 - Responsive, simple UI (focus on functionality and structure)
 
-> Note: This is a learning/portfolio project. The focus is on clean structure and React patterns rather than a polished UI.
-
 ---
 
 ## Getting Started
